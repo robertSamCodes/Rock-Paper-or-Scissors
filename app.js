@@ -20,5 +20,35 @@ const getComputerChoice = () =>{
     return 'scissor'
   }
 }
+// Determine winner
 
-console.log(getComputerChoice())
+const determineWinner = (userChoice , computerChoice) =>{
+  // Check for tie
+  if (userChoice === computerChoice){
+    return "Ooops, there was a tie!"
+  }
+
+  // If user chooses rock
+  if(userChoice === 'rock' && computerChoice === 'paper'){
+    return "Hey, computer won!"
+  }else if (userChoice === 'rock' && computerChoice === 'scissors'){
+    return "You have won , congrats!"
+  }
+
+  // If user chooses paper
+  else if(userChoice === 'paper' && computerChoice === 'rock'){
+    return "You won!"
+  }else if(userChoice === 'paper' && computerChoice === 'scissors'){
+    return "Computer won!"
+  }
+
+  // If user chooses scissors
+  else if(userChoice === 'scissors' && computerChoice === 'rock'){
+    return "Computer won!"
+  }else if(userChoice === 'scissors' && computerChoice === 'paper'){
+    return "You won!"
+  }
+}
+
+
+console.log(determineWinner('scissors=','paper'))
